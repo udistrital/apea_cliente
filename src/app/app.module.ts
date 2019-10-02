@@ -25,13 +25,15 @@ import {
   NbSidebarModule,
   NbToastrModule,
   NbWindowModule,
+  NbCardModule,
 } from '@nebular/theme';
+import { GestionEstudiantesComponent } from './gestion-estudiantes/gestion-estudiantes.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, GestionEstudiantesComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -39,6 +41,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     NgbModule,
     NbEvaIconsModule,
+    NbCardModule,
 
     ThemeModule.forRoot(),
 

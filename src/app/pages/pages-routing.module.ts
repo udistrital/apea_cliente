@@ -5,6 +5,11 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import { UsuarioApeaComponent } from './usuario-apea/usuario-apea.component';
+import { BienvenidaComponent } from './bienvenida/bienvenida.component';
+import { GestionEstudiantesComponent } from './gestion-estudiantes/gestion-estudiantes.component';
+import { SeguimientosDocenteComponent } from './seguimientos-docente/seguimientos-docente.component';
+import { TutorialesComponent } from './tutoriales/tutoriales.component';
 
 const routes: Routes = [{
   path: '',
@@ -17,6 +22,26 @@ const routes: Routes = [{
     {
       path: 'iot-dashboard',
       component: DashboardComponent,
+    },
+    {
+      path: 'usuarioApea',
+      component: UsuarioApeaComponent,
+    },
+    {
+      path: 'gestionEstudiantes',
+      component: GestionEstudiantesComponent,
+    },
+    {
+      path: 'seguimientosDocente',
+      component: SeguimientosDocenteComponent,
+    },
+    {
+      path: 'tutoriales',
+      component: TutorialesComponent,
+    },
+    {
+      path: 'bienvenida',
+      component: BienvenidaComponent,
     },
     {
       path: 'layout',
@@ -70,7 +95,7 @@ const routes: Routes = [{
     },
     {
       path: '',
-      redirectTo: 'dashboard',
+      redirectTo: 'bienvenida',
       pathMatch: 'full',
     },
     {

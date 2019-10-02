@@ -1,9 +1,7 @@
-@import '../@theme/styles/themes';
-:host {
+@import '../../@theme/styles/themes';
 
-  background: nb-theme(background-basic-color-1);
-}
 @include nb-install-component() {
+
   .picture {
     background-position: center;
     background-size: cover;
@@ -36,21 +34,6 @@
 
     ::ng-deep svg {
       vertical-align: top;
-    }
-  }
-
-  ::ng-deep router-outlet + * {
-    display: block;
-    animation: fade 1s;
-
-    @keyframes fade {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
     }
   }
 }

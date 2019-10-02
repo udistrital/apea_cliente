@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { NbMenuModule } from '@nebular/theme';
+import { NbMenuModule, NbCardModule } from '@nebular/theme';
 
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
@@ -11,6 +11,11 @@ import { ConfiguracionService } from '../@core/data/configuracion.service';
 import { MenuService } from '../@core/data/menu.service';
 import { SharedModule } from '../shared/shared.module';
 import { NbIconModule } from '@nebular/theme';
+import { UsuarioApeaComponent } from './usuario-apea/usuario-apea.component';
+import { BienvenidaComponent } from './bienvenida/bienvenida.component';
+import { GestionEstudiantesComponent } from './gestion-estudiantes/gestion-estudiantes.component';
+import { SeguimientosDocenteComponent } from './seguimientos-docente/seguimientos-docente.component';
+import { TutorialesComponent } from './tutoriales/tutoriales.component';
 
 
 @NgModule({
@@ -23,9 +28,15 @@ import { NbIconModule } from '@nebular/theme';
     SharedModule,
     ECommerceModule,
     MiscellaneousModule,
+    NbCardModule,
   ],
   declarations: [
     PagesComponent,
+    UsuarioApeaComponent,
+    BienvenidaComponent,
+    GestionEstudiantesComponent,
+    SeguimientosDocenteComponent,
+    TutorialesComponent,
   ],
   providers: [
     ConfiguracionService,
