@@ -27,13 +27,12 @@ import {
   NbWindowModule,
   NbCardModule,
 } from '@nebular/theme';
-import { GestionEstudiantesComponent } from './gestion-estudiantes/gestion-estudiantes.component';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
-  declarations: [AppComponent, GestionEstudiantesComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
