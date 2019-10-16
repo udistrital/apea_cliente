@@ -11,7 +11,7 @@ export class UsuarioApeaComponent implements OnInit {
 
   constructor(private user: UserInfoService) {
     // this.user_info = JSON.parse(atob(localStorage.getItem("id_token").split(".")[1]));
-    this.user.get('informacion_proveedor/?query=NumDocumento:80901903')
+    this.user.get('informacion_proveedor/?query=NumDocumento:80093200')
     .subscribe((data: any) => {
       this.user_info = data;
     });

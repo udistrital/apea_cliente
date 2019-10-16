@@ -26,6 +26,7 @@ import {
   NbToastrModule,
   NbWindowModule,
   NbCardModule,
+  NbListModule,
 } from '@nebular/theme';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -41,6 +42,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     NgbModule,
     NbEvaIconsModule,
     NbCardModule,
+    NbListModule,
 
     ThemeModule.forRoot(),
 
