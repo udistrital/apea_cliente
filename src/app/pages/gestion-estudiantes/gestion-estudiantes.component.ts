@@ -16,11 +16,15 @@ export class GestionEstudiantesComponent implements OnInit {
   }
   estudiantes_lista: any = [] ;
   estudianteSeleccionado: any;
-
+  dataForm: any;
   estudianteForm: FormGroup;
 
   constructor(private estudiantes: EstudiantesConsejeroService, private fb: FormBuilder) {
     this.createForm();
+    this.estudianteForm.valueChanges
+    .subscribe((data) => {
+      this.dataForm = data;
+    });
     // this.user_info = JSON.parse(atob(localStorage.getItem("id_token").split(".")[1]));
     this.estudiantes.get('80093200')
     .subscribe((data: any) => {
@@ -34,8 +38,8 @@ export class GestionEstudiantesComponent implements OnInit {
   cargarEstudiante( estudiante: any) {
     const {nombre, codigo} = estudiante;
     this.estudianteSeleccionado = estudiante;
-    this.estudianteForm.setValue(estudiante);
-    console.log(this.estudianteForm.value);
+    this.estudianteForm.setValue({nombre: nombre, codigo: codigo});
+    console.info(this.estudianteForm.value);
   }
 
   onClickSubmit(email, password) {

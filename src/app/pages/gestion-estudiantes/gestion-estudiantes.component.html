@@ -26,7 +26,11 @@
           </form>
         </div>
         {{estudianteSeleccionado | json}}
+        <div *ngIf="dataForm.nombre">
+          {{ dataForm.nombre}}
+        </div>
       </nb-card-body>
+
     </nb-card>
   </div>
 </div>
