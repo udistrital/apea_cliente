@@ -31,6 +31,7 @@ import {
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -43,7 +44,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     NbEvaIconsModule,
     NbCardModule,
     NbListModule,
-
+    FormsModule,
     ThemeModule.forRoot(),
 
     NbSidebarModule.forRoot(),

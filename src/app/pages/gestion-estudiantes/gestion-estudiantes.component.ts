@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EstudiantesConsejeroService } from '../../@core/data/estudiantes-consejero.service';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'ngx-gestion-estudiantes',
@@ -7,18 +8,40 @@ import { EstudiantesConsejeroService } from '../../@core/data/estudiantes-consej
   styleUrls: ['./gestion-estudiantes.component.scss'],
 })
 export class GestionEstudiantesComponent implements OnInit {
+  createForm() {
+    this.estudianteForm = new FormGroup({
+      codigo: new FormControl('Código', Validators.required),
+      nombre: new FormControl('Nombre', Validators.required),
+    });
+  }
+  estudiantes_lista: any = [] ;
+  estudianteSeleccionado: any;
 
-  estudiantes_lista: {}[] = [] ;
+  estudianteForm: FormGroup;
 
-  constructor(private estudiantes: EstudiantesConsejeroService) {
+  constructor(private estudiantes: EstudiantesConsejeroService, private fb: FormBuilder) {
+    this.createForm();
     // this.user_info = JSON.parse(atob(localStorage.getItem("id_token").split(".")[1]));
     this.estudiantes.get('80093200')
     .subscribe((data: any) => {
-      this.estudiantes_lista = data.estudiantes;
+      // debugger;
+      this.estudiantes_lista = data.estudiantes.estudiante;
     });
    }
   ngOnInit() {
   }
+
+  cargarEstudiante( estudiante: any) {
+    const {nombre, codigo} = estudiante;
+    this.estudianteSeleccionado = estudiante;
+    this.estudianteForm.setValue(estudiante);
+    console.log(this.estudianteForm.value);
+  }
+
+  onClickSubmit(email, password) {
+    alert('Your Email is : ' + email);
+  }
+
 
   users: { name: string, title: string }[] = [
     { name: 'Carla Espinosa', title: 'Nurse' },

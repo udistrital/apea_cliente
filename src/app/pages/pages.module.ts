@@ -1,5 +1,14 @@
 import { NgModule } from '@angular/core';
-import { NbMenuModule, NbCardModule, NbListModule, NbUserModule, NbTabsetModule, NbRouteTabsetModule, NbStepperModule, NbButtonModule, NbAccordionModule } from '@nebular/theme';
+import {
+  NbMenuModule,
+  NbCardModule,
+  NbListModule,
+  NbUserModule,
+  NbTabsetModule,
+  NbRouteTabsetModule,
+  NbStepperModule,
+  NbButtonModule,
+  NbAccordionModule} from '@nebular/theme';
 
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
@@ -16,6 +25,7 @@ import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { GestionEstudiantesComponent } from './gestion-estudiantes/gestion-estudiantes.component';
 import { SeguimientosDocenteComponent } from './seguimientos-docente/seguimientos-docente.component';
 import { TutorialesComponent } from './tutoriales/tutoriales.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -36,6 +46,8 @@ import { TutorialesComponent } from './tutoriales/tutoriales.component';
     NbStepperModule,
     NbButtonModule,
     NbAccordionModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     PagesComponent,
