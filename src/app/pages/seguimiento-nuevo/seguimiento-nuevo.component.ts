@@ -20,7 +20,7 @@ export class SeguimientoNuevoComponent implements OnInit {
     private seguimiento: SeguimientoEstudiantesService,
     private observacionService: ObservacionService) { 
       this.segId = this.route.snapshot.paramMap.get('id');
-      this.observacionService.get('?IdSeguimiento.Id%3A'+this.segId)
+      this.observacionService.get('?query=IdSeguimiento.Id%3A'+this.segId)
       .subscribe((data: any) => {
         console.log(data);
         this.observaciones_lista = data;

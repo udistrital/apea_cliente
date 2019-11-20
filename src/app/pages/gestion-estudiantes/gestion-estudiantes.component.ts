@@ -67,7 +67,6 @@ export class GestionEstudiantesComponent implements OnInit {
     console.log(model);
     this.seguimiento.post('',model)
     .subscribe((response: any) => {
-      console.log(response.Id);
       if(response.toString().startsWith("pq")){
         //don't go to anywhere
       }else{
