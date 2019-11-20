@@ -16,6 +16,8 @@ export const environment = {
   CONF_MENU_SERVICE: '/menu_opcion_padre/ArbolMenus/',
   USER_INFO: 'https://autenticacion.portaloas.udistrital.edu.co/apioas/administrativa_amazon_api/v1/',
   EST_BY_CONS: 'https://autenticacion.portaloas.udistrital.edu.co/apioas/academica_jbpm/v1/estudiantes_consejero/',
+  SEG_EST: 'http://127.0.0.1:8080/v1/seguimiento',
+  OBS_SEG: 'http://127.0.0.1:8080/v1/observacion',
   TOKEN: {
     AUTORIZATION_URL: 'https://autenticacion.portaloas.udistrital.edu.co/oauth2/authorize',
     CLIENTE_ID: 'e36v1MPQk2jbz9KM4SmKhk8Cyw0a',

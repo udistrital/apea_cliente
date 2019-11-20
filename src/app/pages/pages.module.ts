@@ -8,7 +8,8 @@ import {
   NbRouteTabsetModule,
   NbStepperModule,
   NbButtonModule,
-  NbAccordionModule} from '@nebular/theme';
+  NbAccordionModule,
+  NbSelectModule} from '@nebular/theme';
 
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
@@ -26,6 +27,7 @@ import { GestionEstudiantesComponent } from './gestion-estudiantes/gestion-estud
 import { SeguimientosDocenteComponent } from './seguimientos-docente/seguimientos-docente.component';
 import { TutorialesComponent } from './tutoriales/tutoriales.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SeguimientoNuevoComponent } from './seguimiento-nuevo/seguimiento-nuevo.component';
 
 
 @NgModule({
@@ -42,6 +44,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NbListModule,
     NbUserModule,
     NbTabsetModule,
+    NbSelectModule,
     NbRouteTabsetModule,
     NbStepperModule,
     NbButtonModule,
@@ -56,6 +59,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     GestionEstudiantesComponent,
     SeguimientosDocenteComponent,
     TutorialesComponent,
+    SeguimientoNuevoComponent,
   ],
   providers: [
     ConfiguracionService,

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EstudiantesConsejeroService } from '../../@core/data/estudiantes-consejero.service';
 import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
+import { SeguimientoEstudiantesService } from '../../@core/data/seguimiento-estudiantes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-gestion-estudiantes',
@@ -12,6 +14,8 @@ export class GestionEstudiantesComponent implements OnInit {
     this.estudianteForm = new FormGroup({
       codigo: new FormControl('Código', Validators.required),
       nombre: new FormControl('Nombre', Validators.required),
+      tipo_contacto: new FormControl('Tipo Contacto', Validators.required),
+      motivo: new FormControl('Motivo', Validators.required),
     });
   }
   estudiantes_lista: any = [] ;
@@ -19,7 +23,10 @@ export class GestionEstudiantesComponent implements OnInit {
   dataForm: any;
   estudianteForm: FormGroup;
 
-  constructor(private estudiantes: EstudiantesConsejeroService, private fb: FormBuilder) {
+  constructor(private estudiantes: EstudiantesConsejeroService,
+     private seguimiento: SeguimientoEstudiantesService, 
+     private fb: FormBuilder,
+     private router: Router) {
     this.createForm();
     this.estudianteForm.valueChanges
     .subscribe((data) => {
@@ -36,14 +43,37 @@ export class GestionEstudiantesComponent implements OnInit {
   }
 
   cargarEstudiante( estudiante: any) {
-    const {nombre, codigo} = estudiante;
+    const {nombre, codigo, tipo_contacto = "Acompañamiento Clase", motivo = "1"} = estudiante;
     this.estudianteSeleccionado = estudiante;
-    this.estudianteForm.setValue({nombre: nombre, codigo: codigo});
+    this.estudianteForm.setValue({nombre: nombre,  codigo: codigo, tipo_contacto: tipo_contacto, motivo: motivo});
     console.info(this.estudianteForm.value);
   }
 
-  onClickSubmit(email, password) {
-    alert('Your Email is : ' + email);
+  onClickSubmit() {
+
+    const formu = this.estudianteForm.getRawValue();
+    console.table(formu);    
+    const model = {
+      "Cerrado": false,
+      "CodigoEstudiante": {
+        "Id": parseInt(formu.codigo),
+      },
+      "CodigoFuncionario": 80093200,
+      "Id": 0,
+      "Motivo": parseInt(formu.motivo),
+      "TipoContacto": formu.tipo_contacto,
+    };
+
+    console.log(model);
+    this.seguimiento.post('',model)
+    .subscribe((response: any) => {
+      console.log(response.Id);
+      if(response.toString().startsWith("pq")){
+        //don't go to anywhere
+      }else{
+        this.router.navigate(['/pages/seguimientoNuevo/'+response.Id]);
+      }
+    })
   }
 
 

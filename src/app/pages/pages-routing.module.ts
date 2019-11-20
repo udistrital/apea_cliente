@@ -10,6 +10,7 @@ import { BienvenidaComponent } from './bienvenida/bienvenida.component';
 import { GestionEstudiantesComponent } from './gestion-estudiantes/gestion-estudiantes.component';
 import { SeguimientosDocenteComponent } from './seguimientos-docente/seguimientos-docente.component';
 import { TutorialesComponent } from './tutoriales/tutoriales.component';
+import { SeguimientoNuevoComponent } from './seguimiento-nuevo/seguimiento-nuevo.component';
 
 const routes: Routes = [{
   path: '',
@@ -38,6 +39,10 @@ const routes: Routes = [{
     {
       path: 'tutoriales',
       component: TutorialesComponent,
+    },
+    {
+      path: 'seguimientoNuevo/:id',
+      component: SeguimientoNuevoComponent,
     },
     {
       path: 'bienvenida',

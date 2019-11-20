@@ -27,6 +27,11 @@ import {
   NbWindowModule,
   NbCardModule,
   NbListModule,
+  NbCheckboxModule, NbIconModule,
+  NbInputModule,
+  NbRadioModule,
+  NbSelectModule,
+  NbUserModule,
 } from '@nebular/theme';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -44,6 +49,11 @@ import { FormsModule } from '@angular/forms';
     NbEvaIconsModule,
     NbCardModule,
     NbListModule,
+    NbCheckboxModule, NbIconModule,
+    NbInputModule,
+    NbRadioModule,
+    NbSelectModule,
+    NbUserModule,
     FormsModule,
     ThemeModule.forRoot(),
 
