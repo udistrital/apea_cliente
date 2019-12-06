@@ -18,7 +18,7 @@ let httpOptions = {};
 
 
 
-const path = environment.SEG_EST;
+const path = environment.API_REST_APEA+'seguimiento';
 
 
 @Injectable({

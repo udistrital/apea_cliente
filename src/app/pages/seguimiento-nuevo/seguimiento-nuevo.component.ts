@@ -32,4 +32,8 @@ export class SeguimientoNuevoComponent implements OnInit {
     
   }
 
+  cargarObs(observacion: any){
+    
+  }
+
 }

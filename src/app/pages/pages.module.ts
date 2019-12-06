@@ -9,7 +9,8 @@ import {
   NbStepperModule,
   NbButtonModule,
   NbAccordionModule,
-  NbSelectModule} from '@nebular/theme';
+  NbSelectModule,
+  NbActionsModule} from '@nebular/theme';
 
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';
@@ -43,6 +44,7 @@ import { SeguimientoNuevoComponent } from './seguimiento-nuevo/seguimiento-nuevo
     NbCardModule,
     NbListModule,
     NbUserModule,
+    NbActionsModule,
     NbTabsetModule,
     NbSelectModule,
     NbRouteTabsetModule,

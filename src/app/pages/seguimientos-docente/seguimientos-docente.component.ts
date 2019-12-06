@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SeguimientoEstudiantesService } from '../../@core/data/seguimiento-estudiantes.service';
 
 @Component({
   selector: 'ngx-seguimientos-docente',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SeguimientosDocenteComponent implements OnInit {
 
-  constructor() { }
+
+  seguimientos_lista: any = [];
+
+  constructor(private seguimientoServ: SeguimientoEstudiantesService) { 
+    this.seguimientoServ.get('?query=CodigoFuncionario%3A80093200&limit=100')
+      .subscribe((data: any) => {
+        console.log(data);
+        this.seguimientos_lista = data;
+      });
+  }
 
   ngOnInit() {
   }

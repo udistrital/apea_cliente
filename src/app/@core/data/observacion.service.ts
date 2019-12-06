@@ -18,7 +18,7 @@ let httpOptions = {};
 
 
 
-export const path = environment.OBS_SEG;
+export const path = environment.API_REST_APEA+'observacion';
 
 @Injectable({
   providedIn: 'root',
@@ -27,6 +27,7 @@ export class ObservacionService {
   constructor(private http: HttpClient) {
   }
   get(endpoint) {
+    console.log(path+endpoint);
     return this.http.get(path + endpoint, httpOptions).pipe(catchError(this.handleError));
   }
   post(endpoint, element) {

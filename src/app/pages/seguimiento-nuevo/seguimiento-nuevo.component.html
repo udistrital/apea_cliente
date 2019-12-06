@@ -9,8 +9,16 @@
             </nb-user>
           </nb-list-item>
         </nb-list>
-        <nb-list-item (click)="cargarObs()">
-          <nb-user>Nueva</nb-user>
+        <nb-list-item>
+          <nb-card>
+            <nb-card-header>Agregar Observación</nb-card-header>
+          <nb-card-body>
+            <nb-action>
+              <nb-icon class="action-icon" icon="plus-square-outline" (click)="nuevaObs()"></nb-icon>
+              <span>Nueva</span>
+            </nb-action>
+          </nb-card-body>
+          </nb-card>
         </nb-list-item>
       </nb-card-body>
     </nb-card>
