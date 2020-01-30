@@ -14,6 +14,7 @@ export class UsuarioApeaComponent implements OnInit {
     this.user.get('informacion_proveedor/?query=NumDocumento:80093200')
     .subscribe((data: any) => {
       this.user_info = data;
+      console.log(this.user_info);
     });
    }
   ngOnInit() {

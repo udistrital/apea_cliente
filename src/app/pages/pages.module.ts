@@ -10,7 +10,8 @@ import {
   NbButtonModule,
   NbAccordionModule,
   NbSelectModule,
-  NbActionsModule} from '@nebular/theme';
+  NbActionsModule,
+  } from '@nebular/theme';
 
 import { ThemeModule } from '../@theme/theme.module';
 import { PagesComponent } from './pages.component';

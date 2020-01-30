@@ -52,7 +52,6 @@ export class GestionEstudiantesComponent implements OnInit {
   onClickSubmit() {
 
     const formu = this.estudianteForm.getRawValue();
-    console.table(formu);    
     const model = {
       "Cerrado": false,
       "CodigoEstudiante": {
@@ -64,7 +63,6 @@ export class GestionEstudiantesComponent implements OnInit {
       "TipoContacto": formu.tipo_contacto,
     };
 
-    console.log(model);
     this.seguimiento.post('',model)
     .subscribe((response: any) => {
       if(response.toString().startsWith("pq")){

@@ -23,39 +23,16 @@
       </nb-card-body>
     </nb-card>
   </div>
-  <!--
   <div class="col-md-12 col-lg-6 col-xxxl-6">
-    <nb-card>
-      <nb-card-header>Estudiante</nb-card-header>
-      <nb-card-body *ngIf="estudianteSeleccionado">
+    <nb-card *ngIf="observacionSel">
+      <nb-card-header>Observación</nb-card-header>
+      <nb-card-body>
         <div class="row">
-          <form novalidate [formGroup]="estudianteForm">
+          <form novalidate [formGroup]="observacionForm">
             <div class="form-group">
-              <label for="codigo" class="label">Código</label>
-              <input type="text" formControlName="codigo" id="codigo">
-              <label for="nombre" class="label">Nombre</label>
-              <input type="text" formControlName="nombre">
-              <p></p>
-              <label for="tipocontacto" class="label">Tipo de Contacto</label>
-              
-              <nb-select selected="Acompañamiento Clase" formControlName="tipo_contacto">
-                <nb-option value="Acompañamiento Clase">Acompañamiento Clase</nb-option>
-                <nb-option value="Acompañamiento Consejeria">Acompañamiento Consejeria</nb-option>
-                <nb-option value="Acompañamiento Tutoria">Acompañamiento Tutoria</nb-option>
-                <nb-option value="Acompañamiento Monitoria">Acompañamiento Monitoria</nb-option>
-                <nb-option value="Llamada">Llamada</nb-option>
-                <nb-option value="Correo Electrónico">Correo Electrónico</nb-option>
-                <nb-option value="Curso Libre">Curso Libre</nb-option>
-                <nb-option value="Otras citaciones">Otras citaciones</nb-option>
-              </nb-select>
-              <p></p>
-              <label for="motivo" class="label">Componente</label>
-              
-              <nb-select selected="1" formControlName="motivo">
-                <nb-option value="1">Académico</nb-option>
-                <nb-option value="2">Socioeconómico</nb-option>
-                <nb-option value="3">Personal</nb-option>
-              </nb-select>
+              <label for="observacion" class="label">Observación</label>
+              <input type="text" formControlName="obser" id="obser">
+              <textarea rows="5" formControlName="obser" nbInput fullWidth shape="round"  placeholder="Text Area"></textarea>
               <nb-card>
                 <nb-card-header>Nuevo Seguimiento</nb-card-header>
                 <nb-card-body>
@@ -69,14 +46,10 @@
             </div>
           </form>
         </div>
-        <!--{{estudianteSeleccionado | json}}
-        <div *ngIf="dataForm.nombre">
-          {{ dataForm.nombre}}
-        </div> 
       </nb-card-body>
 
     </nb-card>
-  </div>  -->
+  </div>
 </div>
 <!-- <ngx-dinamicform [normalform]="formEstudiante"></ngx-dinamicform> -->
 
