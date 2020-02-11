@@ -37,8 +37,9 @@ export class SeguimientoNuevoComponent implements OnInit {
       .subscribe((data: any) => {
         this.observaciones_lista = data;
       });
-      this.seguimiento.get(this.segId).subscribe((data: any) => {
+      this.seguimiento.get("/"+this.segId).subscribe((data: any) => {
         this.segActual = data;
+        console.log(this.segActual);
       });
       
     }
@@ -48,15 +49,23 @@ export class SeguimientoNuevoComponent implements OnInit {
   }
 
   cargarObs(obs: any){
-    console.log("No se que hacer haaaaaaaa");
     this.observacionSel = obs;
     this.observacionForm.setValue({obser: obs.Observacion,  nivelAlerta: 1});
-    
-    console.info(this.observacionForm.value);
+    console.log(obs);
   }
 
   nuevaObs(){
-
+    console.log(this.segActual);
+    const model = {
+      "Id" : 0,
+      "Fecha": Date.now(),
+      "Observacion": "",
+      "IdSeguimiento": this.segActual
+    };
+    this.observacionSel = model;
+    this.observacionForm.setValue({obser: model.Observacion,  nivelAlerta: 1});
+    this.observacionService.post('', model);
+    console.log(model);
   }
 
   cambiarEstado(){

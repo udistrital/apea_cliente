@@ -1,0 +1,16 @@
+@import '../../@theme/styles/themes';
+
+@include nb-install-component() {
+    $color-yellow: #FFEF02;
+    $color-orange: #FF7002;
+    $color-red: #FF0000;
+  .amarilla {
+    background-color: $color-yellow;
+  }
+  .naranja {
+    background-color: $color-orange;
+  }
+  .roja {
+    background-color: $color-red;
+  }
+}

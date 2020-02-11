@@ -11,6 +11,7 @@ import {
   NbAccordionModule,
   NbSelectModule,
   NbActionsModule,
+  NbRadioModule,
   } from '@nebular/theme';
 
 import { ThemeModule } from '../@theme/theme.module';
@@ -52,6 +53,7 @@ import { SeguimientoNuevoComponent } from './seguimiento-nuevo/seguimiento-nuevo
     NbStepperModule,
     NbButtonModule,
     NbAccordionModule,
+    NbRadioModule,
     FormsModule,
     ReactiveFormsModule,
   ],

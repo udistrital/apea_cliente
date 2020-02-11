@@ -31,7 +31,12 @@
           <form novalidate [formGroup]="observacionForm">
             <div class="form-group">
               <label for="observacion" class="label">Observación</label>
-              <input type="text" formControlName="obser" id="obser">
+              <nb-radio-group name="nivelAlerta" formControlName="nivelAlerta">
+                <nb-radio value="0">Ninguna</nb-radio>
+                <nb-radio class="amarilla" value="1">Amarilla</nb-radio>
+                <nb-radio class="naranja" value="2">Naranja</nb-radio>
+                <nb-radio class="roja" value="3">Roja</nb-radio>
+              </nb-radio-group>
               <textarea rows="5" formControlName="obser" nbInput fullWidth shape="round"  placeholder="Text Area"></textarea>
               <nb-card>
                 <nb-card-header>Nuevo Seguimiento</nb-card-header>
